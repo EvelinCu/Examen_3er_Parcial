@@ -1,0 +1,317 @@
+-------------Examen tercer parcial--------
+create table Tab1(
+id_t1 number(10),
+nombre varchar(30),
+precio number(10),
+num_tipo number(10),
+num_mar number(10)
+);
+
+create table Tab2(
+id_t2 number(10),
+tipo varchar(30)
+);
+
+create table Tab3(
+id_t3 number(10),
+marca varchar(30)
+);
+
+CREATE TABLE TabExtra (
+  mensaje VARCHAR(100)
+);
+
+
+---------------insertar datos tabla 1---------------
+insert into Tab1 values(01,'Agua_natural',15,1,1);
+insert into Tab1 values(02,'Agua_natural',15,1,2);
+insert into Tab1 values(03,'Agua_limon',18,1,1);
+insert into Tab1 values(04,'Agua_guayaba',18,1,1);
+insert into Tab1 values(05,'Agua_piñacolada',18,1,1);
+insert into Tab1 values(06,'Agua_fresa',18,1,1);
+insert into Tab1 values(07,'Refresco',20,1,3);
+insert into Tab1 values(08,'Refresco',20,1,4);
+insert into Tab1 values(09,'Refresco',18,1,5);
+insert into Tab1 values(10,'Te_artesanal',20,1,6);
+insert into Tab1 values(11,'Cafe',15,1,7);
+insert into Tab1 values(12,'Cafe',20,1,6);
+insert into Tab1 values(13,'Licuado',20,1,6);
+insert into Tab1 values(14,'Frappe',40,1,7);
+insert into Tab1 values(15,'Rebamada_pastel',30,2,6);
+insert into Tab1 values(16,'Rebamada_pay',30,2,6);
+insert into Tab1 values(17,'Paleta_Helada',15,2,6);
+insert into Tab1 values(18,'Fresas_crema',25,2,6);
+insert into Tab1 values(19,'Cereal',20,2,6);
+insert into Tab1 values(20,'Coctel_frutas',30,2,6);
+insert into Tab1 values(21,'Cereal_yogurt',25,2,6);
+insert into Tab1 values(22,'Gelatina',20,2,6);
+insert into Tab1 values(23,'Torta_milanesa',35,3,6);
+insert into Tab1 values(24,'Torta_cubana',50,3,6);
+insert into Tab1 values(25,'Torta_salchicha',30,3,6);
+insert into Tab1 values(26,'Torta_pierna',30,3,6);
+insert into Tab1 values(27,'Torta_hawaiana',35,3,6);
+insert into Tab1 values(28,'Torta_pollo',35,3,6);
+insert into Tab1 values(29,'Torta_choriqueso',35,3,6);
+insert into Tab1 values(30,'Torta_huevo',25,3,6);
+insert into Tab1 values(31,'Torta_pastor',35,3,6);
+insert into Tab1 values(32,'Torta_suadero',35,3,6);
+insert into Tab1 values(33,'Sandwich',25,3,6);
+insert into Tab1 values(34,'Marucha',15,3,6);
+insert into Tab1 values(35,'Nacho',35,3,6);
+insert into Tab1 values(36,'Cuernito',25,3,6);
+insert into Tab1 values(37,'Sincronizadas',25,3,6);
+insert into Tab1 values(38,'Molletes',30,3,6);
+insert into Tab1 values(39,'Gringas',35,3,6);
+insert into Tab1 values(40,'Burrito_suadero',40,3,6);
+insert into Tab1 values(41,'Burrito_pollo',40,3,6);
+insert into Tab1 values(42,'Burrito_pastor',40,3,6);
+insert into Tab1 values(43,'Hamburguesa',30,3,6);
+insert into Tab1 values(44,'Hamburguesa_hawaiana',34,3,6);
+insert into Tab1 values(45,'Hamburguesa_doble',50,3,6);
+insert into Tab1 values(46,'Papas_francesa',30,3,6);
+insert into Tab1 values(47,'Hot_dogs',30,3,6);
+insert into Tab1 values(48,'Quesadillas',30,3,6);
+insert into Tab1 values(49,'Gordita_chicharron',20,3,6);
+insert into Tab1 values(50,'Gordita_suadero',25,3,6);
+insert into Tab1 values(51,'Pambazo',25,3,6);
+insert into Tab1 values(52,'Sope_sencillo',25,3,6);
+insert into Tab1 values(53,'Sope_combinado',35,3,6);
+insert into Tab1 values(54,'Sope_pastor',30,3,6);
+insert into Tab1 values(55,'Sope_suadero',30,3,6);
+insert into Tab1 values(56,'Sope_pollo',25,3,6);
+insert into Tab1 values(57,'Nachos_carne',35,3,6);
+insert into Tab1 values(58,'Chilaquiles',30,3,6);
+insert into Tab1 values(59,'Tacos_dorados',30,3,6);
+insert into Tab1 values(60,'Ensalada',30,3,6);
+insert into Tab1 values(61,'Gomitas',25,4,8);
+insert into Tab1 values(62,'Chocolate',15,4,9);
+insert into Tab1 values(63,'Chocolate',25,4,10);
+insert into Tab1 values(64,'Lunetas',25,4,8);
+insert into Tab1 values(65,'Paletas',3,4,11);
+insert into Tab1 values(66,'Galletas_emperador',20,5,12);
+insert into Tab1 values(67,'Galletas_oreo',20,5,12);
+insert into Tab1 values(68,'Galletas_principe',20,5,13);
+insert into Tab1 values(69,'Barritas',20,5,13);
+insert into Tab1 values(70,'Roles',30,6,14);
+insert into Tab1 values(71,'Donas',25,6,14);
+insert into Tab1 values(72,'Taquito_chocolate',20,6,6);
+----------productos que no son del tesoem------
+insert into Tab1 values(73,'cerbeza',30,7,6);
+insert into Tab1 values(74,'cigarro',20,8,6);
+insert into Tab1 values(75,'pluma',20,9,6);
+insert into Tab1 values(76,'pinzas',20,10,6);
+insert into Tab1 values(77,'cargador',20,11,6);
+
+drop table Tab1;
+drop table Tab2;
+drop table Tab3;
+drop table TabExtra;
+
+select * from Tab1;
+select * from Tab2;
+select * from Tab3;
+
+---------llenado tabla 2-------
+create sequence tab2_secuencia
+    start with 1
+    increment by 1
+    maxvalue 50
+    minvalue 1;
+    
+create or replace trigger tab2_secuencia
+before insert on Tab1
+for each row
+begin   
+
+ if:new.num_tipo = 1 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Bebidas');
+    end if;
+if:new.num_tipo = 2 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Postres');
+    end if;
+if:new.num_tipo = 3 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Comida');
+    end if;
+if:new.num_tipo = 4 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Dulces');
+    end if;
+if:new.num_tipo = 5 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Galletas');
+    end if;
+    
+if:new.num_tipo = 6 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Panes');
+    end if;
+    
+if:new.num_tipo = 7 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Alcohol');
+    end if;
+    
+if:new.num_tipo = 8 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'cigarros');
+    end if;
+    
+if:new.num_tipo = 9 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Papeleria');
+    end if;
+    
+if:new.num_tipo = 10 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Herramientas');
+    end if;
+    
+if:new.num_tipo = 11 then
+        insert into Tab2 values (tab2_secuencia.nextval, 'Electronica');
+    end if;
+        
+    end if;
+end;
+
+--------llenado tabla 3------
+create sequence tab3_secuencia
+    start with 1
+    increment by 1
+    maxvalue 50
+    minvalue 1;
+    
+create or replace trigger tab3_secuencia
+before insert on Tab1
+for each row
+begin   
+
+ if:new.num_mar = 1 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Bonafont');
+    end if;
+if:new.num_mar = 2 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Eupura');
+    end if;
+if:new.num_mar = 3 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Cocacola');
+    end if;
+if:new.num_mar = 4 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Pepsi');
+    end if;
+if:new.num_mar = 5 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Jarrito');
+    end if;
+    
+if:new.num_mar = 6 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Tesoem');
+    end if;
+    
+if:new.num_mar = 7 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'ArteCafe');
+    end if;
+    
+if:new.num_mar = 8 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Ricolino');
+    end if;
+    
+if:new.num_mar = 9 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'CarlosV');
+    end if;
+    
+if:new.num_mar = 10 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Kinder');
+    end if;
+    
+if:new.num_mar = 11 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Vero');
+    end if;
+    
+if:new.num_mar = 12 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Gamesa');
+    end if;
+    
+if:new.num_mar = 13 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Marinela');
+    end if;
+        
+if:new.num_mar = 14 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Bimbo');
+    end if;
+    
+if:new.num_mar = 15 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Corona');
+    end if;    
+    
+if:new.num_mar = 16 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Malboro');
+    end if;    
+    
+if:new.num_mar = 17 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Bic');
+    end if;  
+    
+if:new.num_mar = 18 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Trupper');
+    end if;
+    
+if:new.num_mar = 19 then
+        insert into Tab3 values (tab3_secuencia.nextval, 'Apple');
+    end if;
+        
+    end if;
+end;
+
+------llenado tabla extra------
+create or replace trigger insertar_tab1
+after insert on tab1
+for each row
+declare
+  primer_letra char(1);
+begin
+  primer_letra := upper(substr(:new.nombre, 1, 1));
+ 
+  if primer_letra = 'T' then
+    insert into tabextra (mensaje) values ('Se insertó un producto con la vitamina T, con nombre ' || :new.nombre);
+  end if;
+end;
+
+---------joins------
+-----
+---Tendrán que utilizar full join para combinar las 3 tablas con esto tendrá que hacer dentro de un selectllamar a nombre, precio de la tabla 1, tipo de la tabla 2 y Marca de la tabla 3.
+select tab1.nombre, tab1.precio, tab2.tipo, tab3.marca
+from tab1
+full join tab2 on tab1.num_tipo = tab2.id_t2
+full join tab3 on tab1.num_mar = tab3.id_t3;
+
+-------
+---Un inner join juntando tabla 1 y tabla 3 donde solo muestre los productos que son de parte de la universidad (marca).
+select tab1.nombre, tab1.precio, tab3.marca
+from tab1
+inner join tab3 on tab1.num_mar = tab3.id_t3
+where tab3.marca = 'tesoem';
+---------
+---Realizar un left join sin relación de la tabla 1 y 2.
+select tab1.nombre, tab1.precio, tab2.tipo
+from tab1
+left join tab2 on 1 = 1;
+----------
+---Realizar un right join con relación de la tabla 1 y 3.
+select tab1.nombre, tab1.precio, tab3.marca
+from tab1
+right join tab3 on tab1.num_mar = tab3.id_t3;
+----------
+----Realizar un full join sin relación de las 3 tablas.
+select tab1.nombre, tab1.precio, tab2.tipo, tab3.marca
+from tab1
+full join tab2 on 1 = 1
+full join tab3 on 1 = 1;
+-----------
+----Realizar un join de las 3 tablas donde muestre los productos que empiecen con la letra T.
+select tab1.nombre, tab1.precio, tab2.tipo, tab3.marca
+from tab1
+join tab2 on tab1.num_tipo = tab2.id_t2
+join tab3 on tab1.num_mar = tab3.id_t3
+where tab1.nombre like 'T%';
+
+--------
+-----Hacer una vista (créate view) son libres de hacer la vista que quieran (investigar por su cuenta )
+CREATE VIEW mostrarProductosLetraT AS
+SELECT Tab1.nombre AS nombre_producto, Tab2.tipo, Tab3.marca
+FROM Tab1
+JOIN Tab2 ON Tab1.num_tipo = Tab2.id_t2
+JOIN Tab3 ON Tab1.num_mar = Tab3.id_t3
+WHERE Tab1.nombre LIKE 'T%';
+
+select * from mostrarProductosLetraT;
